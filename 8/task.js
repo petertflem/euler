@@ -20,9 +20,9 @@ var number = '73167176531330624919225119674426574742355349194934\
 05886116467109405077541002256983155200055935729725\
 71636269561882670428252483600823257530420752963450';
 
-for (var i = 0; i < number.length - 13; i += 13)
+for (var i = 0; i < number.length - 13; i++)
 {
-	var sequence = number.slice(i, i + 13);
+	var sequence = number.slice(i, i + 13); // 0 based index
 	var sum = sequence.split('').reduce(function (sum, next) {
 		return sum * parseInt(next, 10);
 	}, 1);
