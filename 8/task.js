@@ -22,7 +22,7 @@ var number = '73167176531330624919225119674426574742355349194934\
 
 for (var i = 0; i < number.length - 13; i++)
 {
-	var sequence = number.slice(i, i + 13); // 0 based index
+	var sequence = number.slice(i, i + 13);
 	var sum = sequence.split('').reduce(function (sum, next) {
 		return sum * parseInt(next, 10);
 	}, 1);
