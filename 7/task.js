@@ -14,22 +14,11 @@ while (!found) {
 
 console.log(index);
 
-function isPrime(number) {
-  var upperLimit = Math.ceil(Math.sqrt(number));
-  var count = 2;
-  
-  if (number === 0 || number === 1)
-    return false;
-  
-  if (number === 2)
+function isPrime(n) {
+    if (n <= 3) { return n > 1; }
+    if (n % 2 == 0 || n % 3 == 0) { return false; }
+    for (var  i = 5; i * i <= n; i += 6) {
+        if (n % i == 0 || n % (i + 2) == 0) { return false; }
+    }
     return true;
-    
-  while (count <= upperLimit) {
-    if (number % count === 0)
-      return false;
-    
-    count += 1;
-  }
-  
-  return true;
 }
